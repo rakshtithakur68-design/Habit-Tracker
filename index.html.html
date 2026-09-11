@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Habit Tracker">
+<meta name="theme-color" content="#0b1220">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFZklEQVR4nO3cv4oUQRCA8ToxMzgQ4RIRYyPfxmf0bYx8gMNEMLk3MBhYht6tmf7fVTXfh8FxiLNYv+vumeX26cPHr0L0qHerXwDZDRykBg5SAwepgYPUwEFq4CC190uu+vLl25Lruu7v6+/JV3ya8xAMDd2bYGUsDkxMaJySUThgMbkRRPrjyGHx9u9P34teoedPn0//Tl8iPXEcswBEx46h9CLSDYcmAxND05R08dEHx0MZsJjWQyLtPlpxwMJO3Yk04biXAYvl3ROp9lH/+BwZNrufQvVjhUocyLBcLx8120pyJViYLdliSveX4pUDGY5KplO6fjS9ZY8M+7XMqAwH75h4r2iCBTjYUJxWvbnk4kCG6+p81Jw5kOGxiqll4eCoEa+cmRavHCwbfiud3TkOlo2onU62bOVg2fBe0QRPcLBsxO54vgUrB8tGjPLnyG+8kdoRDvaUK3Qw5dyVgz0lUpnTZFshNXCQGjhITcWxP6dw4IjXfqbamZSVg9TAQWrgIDVwkBo4SA0cpAYOUgMHqYGD1MBBauAgNXCQGjhIDRykBg5SAwepgWNlzz+/r34JR4FjWZsMyz7Asaa9CbM+wGGi55/fDRIBx4I0B9Z8gGN2xwJM+QDH1HJmb8cHOOaVP3UjRxBwTKpi2Mt9gMNubz9+rX0B4JhRxRqwXIaAY0LLd4fqwDG2OhkWlg0Bx9BcyxBwjMu7DAGHqUzJEHAMyuntSRI4+uf39iQJHJ0LcNS4BY6eRZIh4OhYMBkCjrVZliHg6FWM25MkcHQozO1JEjhai3fUuAWOpgLLEHC0FFuGgGNyjmQIOKoLeXuSBI6aot6eJIGjuPBHjVvgKOs6MgQcRV1KhoBjdH5lCDjyu8LtSZIPHMvvDpa/gCU5wLH845GudtS4ZR3H8o9HuqwMMY7jfjCTfVxZhljG4eWzkZLCyBCzOCx8NtIFb0+SLOKw8NlIxtenOZnDUfTZSMtfw75gy4ZYw2Hh5xUZtwzhsPCpWcjYZwhH3X/x8sUmqgwxhUNW++D2JMkWDlnnY/kKZDBzOGSFD44aD7OIQ+b6QIaWURwyywcyDrKLQ1afT7UuIkOM46gu0we3J8dZx1E9jNPBc3tymnUcMsYHR42cHOCQ3j6QkZkPHNLPBzLyc4NDRp4/Bl3Xe55wSPOcuD0pyhkOaXj4we1Jaf5wyMSf5isvG+IUh0wZ28VliF8cMnh4yBDXOGTYCJGx5RuHDBgkMm65xyGMc1gRcEg/HzjbFwRHl5CRFAdH42iRcV8cHNIwYGQ8LBQOqRozMrSi4RB92G8/fm1/pr4azwXEIY987L+jfU1JMXHImYDtO8g4LiwOOROAjNMi4xAEtBUcB7UEDlIDB6mBg9TAQWrgIDVwkBo4SA0cpAYOUlNx/H39ffv6+dPnKS+G5rWf6X7W+1g5SA0cpAYOUsvFwbEjUpnTPMKhnVMoUgdTZlshtQIc7Cwxyp/jCQ52ltgdz7dsW2Hx8F7RBM9xsHhE7XSyxQdSFg+/lc4uCweLR7xyZlpzK8vi4bGKqeXiSKDhw1fJvDK3goKVAx9Oq5MhpdsKhw/vFU2w6fE5i4f9WmZUjIPNxVHVG8rW04ePXyuu+vLlW/Kdt39/Kv4dGtT9D23FkaByW7m/EkuInbrIkJYzBz5s1kuGVG8rt+73F2GLWdTDH86WG8xWHFsQWVt3Flt9cIjiQyAyOG0r7/JEqhsO0X1soaRjx8e7Xs8qe+LYOiayBZSKcs77fR9h98exlUOEOjbinY1ROLYgMqFxb3iNxXELJd2b8CboJBxJWKlo/lvia3CQi/iNN1IDB6mBg9TAQWrgIDVwkNp/QoAKscXhtGwAAAAASUVORK5CYII=">
+<title>Habit Tracker</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0;
+    background: #0b1220;
+    color: #e8edf7;
+    font-family: -apple-system, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  body {
+    padding: 16px;
+    padding-top: calc(16px + env(safe-area-inset-top));
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    padding-left: calc(16px + env(safe-area-inset-left));
+    padding-right: calc(16px + env(safe-area-inset-right));
+    min-height: 100vh;
+  }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: #8b98b3; font-size: 13px; margin-bottom: 16px; }
+  .card {
+    background: #131c2e;
+    border: 1px solid #22304a;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .nav button {
+    background: #22304a;
+    color: #e8edf7;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+  .nav button:disabled { opacity: 0.3; }
+  .date-label { font-weight: 600; font-size: 15px; text-align: center; }
+  .score-badge {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .score-num { font-size: 34px; font-weight: 700; color: #22c55e; }
+  .score-den { font-size: 16px; color: #8b98b3; }
+  .habit-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 4px;
+    border-bottom: 1px solid #22304a;
+    font-size: 16px;
+  }
+  .habit-row:last-child { border-bottom: none; }
+  .box {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #4f8cff;
+    border-radius: 6px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #22c55e;
+  }
+  .habit-label.done { text-decoration: line-through; color: #8b98b3; }
+  .chart-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .bar-date { width: 70px; color: #8b98b3; flex-shrink: 0; }
+  .bar-track { flex: 1; background: #22304a; border-radius: 4px; height: 14px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-val { width: 24px; text-align: right; color: #8b98b3; flex-shrink: 0; }
+  .note { font-size: 12px; color: #8b98b3; text-align: center; margin-top: 8px; }
+  .stats-row { display: flex; gap: 10px; margin-top: 12px; }
+  .stat { flex: 1; background: #0b1220; border: 1px solid #22304a; border-radius: 10px; padding: 10px; text-align: center; }
+  .stat .v { font-size: 18px; font-weight: 700; }
+  .stat .l { font-size: 11px; color: #8b98b3; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<h1>Masculine Habit Tracker</h1>
+<div class="sub" id="rangeLabel"></div>
+
+<div class="card">
+  <div class="nav">
+    <button id="prevBtn" type="button">Prev</button>
+    <div class="date-label" id="dateLabel"></div>
+    <button id="nextBtn" type="button">Next</button>
+  </div>
+  <div class="score-badge">
+    <span class="score-num" id="scoreNum">0</span>
+    <span class="score-den">/ 10</span>
+  </div>
+  <div id="habitList"></div>
+  <div class="note">Tap an item to check it off. This session only — take a screenshot to keep a record.</div>
+</div>
+
+<div class="card">
+  <div class="chart-title">Recent Days</div>
+  <div id="barChart"></div>
+  <div class="stats-row">
+    <div class="stat"><div class="v" id="avgScore">0</div><div class="l">Avg score</div></div>
+    <div class="stat"><div class="v" id="bestScore">0</div><div class="l">Best day</div></div>
+    <div class="stat"><div class="v" id="daysLogged">0</div><div class="l">Days logged</div></div>
+  </div>
+</div>
+
+<script>
+  var HABITS = [
+    "No porn", "Avoid sugar", "Drink 8 glasses of water", "Hit the gym",
+    "Read 20 pages", "Wake up before 7 AM", "Dress well",
+    "Save or invest money", "Meditate 10 minutes", "Journal / plan tomorrow"
+  ];
+
+  var startY = 2026, startM = 8, startD = 11;   // Sep 11, 2026
+  var endY = 2026, endM = 11, endD = 31;        // Dec 31, 2026
+
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+
+  function buildDates() {
+    var list = [];
+    var d = new Date(startY, startM, startD);
+    var end = new Date(endY, endM, endD);
+    var guard = 0;
+    while (d.getTime() <= end.getTime() && guard < 400) {
+      var key = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+      list.push(key);
+      d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1);
+      guard++;
+    }
+    return list;
+  }
+
+  var DATES = buildDates();
+  var data = {};
+  var idx = 0;
+
+  function todayKey() {
+    var t = new Date();
+    return t.getFullYear() + "-" + pad(t.getMonth() + 1) + "-" + pad(t.getDate());
+  }
+
+  function findStartIndex() {
+    var tk = todayKey();
+    for (var i = 0; i < DATES.length; i++) {
+      if (DATES[i] === tk) return i;
+    }
+    return 0;
+  }
+
+  function prettyDate(key) {
+    var parts = key.split("-");
+    var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+    var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return days[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+  }
+
+  function getArr(key) {
+    if (!data[key]) data[key] = new Array(HABITS.length).fill(false);
+    return data[key];
+  }
+
+  function render() {
+    var key = DATES[idx];
+    var arr = getArr(key);
+
+    document.getElementById("dateLabel").textContent = prettyDate(key);
+    document.getElementById("prevBtn").disabled = idx === 0;
+    document.getElementById("nextBtn").disabled = idx === DATES.length - 1;
+
+    var listEl = document.getElementById("habitList");
+    listEl.innerHTML = "";
+    for (var i = 0; i < HABITS.length; i++) {
+      var row = document.createElement("div");
+      row.className = "habit-row";
+
+      var box = document.createElement("div");
+      box.className = "box";
+      box.textContent = arr[i] ? "\u2713" : "";
+
+      var label = document.createElement("div");
+      label.className = "habit-label" + (arr[i] ? " done" : "");
+      label.textContent = HABITS[i];
+
+      row.appendChild(box);
+      row.appendChild(label);
+
+      (function(habitIndex, boxEl, labelEl) {
+        row.onclick = function() {
+          var a = getArr(DATES[idx]);
+          a[habitIndex] = !a[habitIndex];
+          boxEl.textContent = a[habitIndex] ? "\u2713" : "";
+          if (a[habitIndex]) {
+            labelEl.className = "habit-label done";
+          } else {
+            labelEl.className = "habit-label";
+          }
+          updateScore();
+          renderChart();
+        };
+      })(i, box, label);
+
+      listEl.appendChild(row);
+    }
+
+    updateScore();
+    renderChart();
+  }
+
+  function updateScore() {
+    var arr = getArr(DATES[idx]);
+    var score = 0;
+    for (var i = 0; i < arr.length; i++) { if (arr[i]) score++; }
+    document.getElementById("scoreNum").textContent = String(score);
+  }
+
+  function colorFor(score) {
+    var ratio = score / HABITS.length;
+    if (ratio >= 0.8) return "#22c55e";
+    if (ratio >= 0.5) return "#4f8cff";
+    if (ratio > 0) return "#f59e0b";
+    return "#22304a";
+  }
+
+  function renderChart() {
+    var chartEl = document.getElementById("barChart");
+    chartEl.innerHTML = "";
+
+    var windowStart = Math.max(0, idx - 6);
+    var windowEnd = Math.min(DATES.length - 1, idx + 3);
+
+    var total = 0, count = 0, best = 0;
+    for (var i = 0; i < DATES.length; i++) {
+      var a = data[DATES[i]];
+      if (a) {
+        var s = 0;
+        for (var j = 0; j < a.length; j++) { if (a[j]) s++; }
+        if (s > 0) {
+          total += s;
+          count++;
+          if (s > best) best = s;
+        }
+      }
+    }
+    document.getElementById("avgScore").textContent = count ? (total / count).toFixed(1) : "0";
+    document.getElementById("bestScore").textContent = String(best);
+    document.getElementById("daysLogged").textContent = String(count);
+
+    for (var k = windowStart; k <= windowEnd; k++) {
+      var key = DATES[k];
+      var arr2 = data[key] || new Array(HABITS.length).fill(false);
+      var score2 = 0;
+      for (var m = 0; m < arr2.length; m++) { if (arr2[m]) score2++; }
+
+      var parts = key.split("-");
+      var shortLabel = parts[1] + "/" + parts[2] + (k === idx ? " *" : "");
+
+      var rowEl = document.createElement("div");
+      rowEl.className = "bar-row";
+
+      var dateEl = document.createElement("div");
+      dateEl.className = "bar-date";
+      dateEl.textContent = shortLabel;
+
+      var trackEl = document.createElement("div");
+      trackEl.className = "bar-track";
+      var fillEl = document.createElement("div");
+      fillEl.className = "bar-fill";
+      fillEl.style.width = Math.round((score2 / HABITS.length) * 100) + "%";
+      fillEl.style.background = colorFor(score2);
+      trackEl.appendChild(fillEl);
+
+      var valEl = document.createElement("div");
+      valEl.className = "bar-val";
+      valEl.textContent = String(score2);
+
+      rowEl.appendChild(dateEl);
+      rowEl.appendChild(trackEl);
+      rowEl.appendChild(valEl);
+      chartEl.appendChild(rowEl);
+    }
+  }
+
+  document.getElementById("prevBtn").onclick = function() {
+    if (idx > 0) { idx--; render(); }
+  };
+  document.getElementById("nextBtn").onclick = function() {
+    if (idx < DATES.length - 1) { idx++; render(); }
+  };
+
+  document.getElementById("rangeLabel").textContent =
+    "Tracking " + DATES.length + " days \u00b7 " + prettyDate(DATES[0]) + " to " + prettyDate(DATES[DATES.length - 1]);
+
+  idx = findStartIndex();
+  render(); // show the UI immediately, regardless of what happens with storage below
+
+  // ---- Persistent storage (best-effort, never blocks the UI above) ----
+  var STORAGE_KEY = "masculine-habit-tracker-data";
+  var storageOk = false;
+  var noteEl = document.querySelector(".note");
+
+  function hasStorageApi() {
+    try {
+      return typeof window.storage === "object" && window.storage !== null
+        && typeof window.storage.get === "function"
+        && typeof window.storage.set === "function";
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function trySaveNow() {
+    if (!storageOk) return;
+    try {
+      window.storage.set(STORAGE_KEY, JSON.stringify(data), false)
+        .then(function() {
+          if (noteEl) noteEl.textContent = "Saved \u2713";
+          setTimeout(function() {
+            if (noteEl) noteEl.textContent = "Tap an item to check it off. Progress saves automatically.";
+          }, 900);
+        })
+        .catch(function() {
+          if (noteEl) noteEl.textContent = "Couldn't save just now \u2014 will retry on next tap.";
+        });
+    } catch (e) {
+      // swallow — never let a save error affect the UI
+    }
+  }
+
+  var saveTimer = null;
+  function scheduleSave() {
+    if (!storageOk) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(trySaveNow, 300);
+  }
+
+  // wrap the existing row click handler additionally to trigger saves
+  var origList = document.getElementById("habitList");
+  origList.addEventListener("click", function() {
+    scheduleSave();
+  });
+
+  setTimeout(function() {
+    try {
+      if (!hasStorageApi()) {
+        if (noteEl) noteEl.textContent = "Saving isn't available here \u2014 progress stays only for this session.";
+        return;
+      }
+      window.storage.get(STORAGE_KEY, false)
+        .then(function(result) {
+          storageOk = true;
+          if (result && result.value) {
+            try {
+              var loaded = JSON.parse(result.value);
+              for (var k in loaded) { data[k] = loaded[k]; }
+              render();
+            } catch (e) {
+              // ignore bad stored data, keep going with fresh state
+            }
+          }
+          if (noteEl) noteEl.textContent = "Tap an item to check it off. Progress saves automatically.";
+        })
+        .catch(function() {
+          // key probably doesn't exist yet — that's fine, still enable saving going forward
+          storageOk = true;
+          if (noteEl) noteEl.textContent = "Tap an item to check it off. Progress saves automatically.";
+        });
+    } catch (e) {
+      if (noteEl) noteEl.textContent = "Saving isn't available here \u2014 progress stays only for this session.";
+    }
+  }, 50);
+</script>
+</body>
+</html>
